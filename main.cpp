@@ -45,16 +45,6 @@ int main()
         printf("ERROR: WE CAN'T ALLOCATE MEMORY FOR INPUT STRING");
         return PROGRAM_ERROR;
     }
-
-    construct_text(&text);
-    qsort(text.mini_string, counter_of_strings, sizeof(struct line), comporator);
-    print_program(&text, counter_of_strings, f_out);
-
-    qsort(text.mini_string, counter_of_strings,sizeof(struct line), comporator_by_end);
-    print_program(&text, counter_of_strings,f_out);
-    
-    original_sort(&text);
-    fwrite(text.input_string, sizeof(char), text.file_size, f_out);
-    free(text.input_string);
-    free(text.mini_string);
+    make_output(&text, counter_of_strings, f_out);
+    destruct_text(&text);
 }
