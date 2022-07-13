@@ -26,6 +26,8 @@ int fileread(data *text, FILE *f_in);
 size_t size_of_file(FILE *f);
 void original_sort(data *text);
 int comporator_by_end(const void * ptr1, const void * ptr2);
+void destruct_text(data *text);
+void make_output(data *text, int counter_of_strings, FILE *f_out);
 
 
 enum PROGRAM_RES
