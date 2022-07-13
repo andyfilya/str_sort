@@ -102,7 +102,16 @@ void construct_text(data *text)
         }
     }
 }
+void destruct_text(data *text)
+{
+    assert(text);
+    
+    free(text->input_string);
+    text->input_string = nullptr;
 
+    free(text->mini_string);
+    text->mini_string = nullptr;
+}
 int cnt_str(data *text)
 {
     assert(text->input_string);
@@ -141,4 +150,16 @@ void original_sort(data *text)
         }
     }
     text->input_string[i] = '\n';
+}
+void make_output(data *text, int counter_of_strings, FILE *f_out)
+{
+    construct_text(text);
+    qsort(text->mini_string, counter_of_strings, sizeof(struct line), comporator);
+    print_program(text, counter_of_strings, f_out);
+
+    qsort(text->mini_string, counter_of_strings,sizeof(struct line), comporator_by_end);
+    print_program(text, counter_of_strings,f_out);
+    
+    original_sort(text);
+    fwrite(text->input_string, sizeof(char), text->file_size, f_out);
 }
