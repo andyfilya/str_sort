@@ -1,5 +1,5 @@
-# Text sort
-## About program
+# TEXT SORT
+## ABOUT PROGRAM
+*The program sorts the text file **alphabetically***
 
-*** This program is sort your text by alphabet ***
-
+:exclamation:
