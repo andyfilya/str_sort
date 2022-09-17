@@ -13,8 +13,17 @@
 
 * output_file_name.txt
 
-CODE
 
 
-./StringSort Gamlet.txt GamletOut.txt
 
+
+
+        ./StringSort Gamlet.txt GamletOut.txt
+
+# PROGRAM INSTALL
+
+
+
+    git clone "git@github.com:andyfilya/str_sort.git"
+
+:purple_heart::purple_heart::purple_heart::purple_heart::purple_heart::purple_heart::purple_heart::purple_heart::purple_heart::purple_heart::purple_heart::purple_heart::purple_heart::purple_heart::purple_heart:
