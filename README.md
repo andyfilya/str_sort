@@ -13,6 +13,8 @@
 
 * output_file_name.txt
 
-'''c
+CODE
+
+
 ./StringSort Gamlet.txt GamletOut.txt
-'''
+
