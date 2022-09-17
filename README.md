@@ -13,6 +13,6 @@
 
 * output_file_name.txt
 
-'''
+'''c
 ./StringSort Gamlet.txt GamletOut.txt
 '''
