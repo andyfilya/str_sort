@@ -11,7 +11,7 @@
 #include <stdbool.h>
 struct line
 {
-    int len_line;;
+    int len_line;
     char* line_begin;
 };
 struct data
@@ -20,16 +20,16 @@ struct data
     char* input_string;
     line* mini_string;
 };
-void print_program(data *text, int cnt_str, FILE *f_out);
-int cnt_str(data *text);
-void construct_text(data *text);
-int comporator(const void * ptr1, const void * ptr2);
-int fileread(data *text, FILE *f_in);
+void Print(data *text, int cnt_str, FILE *f_out);
+int CounterStrings(data *text);
+void ConstructText(data *text);
+int ComparatorStart(const void * ptr1, const void * ptr2);
+int FileRead(data *text, FILE *f_in);
 size_t size_of_file(FILE *f);
-void original_sort(data *text);
-int comporator_by_end(const void * ptr1, const void * ptr2);
-void destruct_text(data *text);
-void make_output(data *text, int counter_of_strings, FILE *f_out);
+void OriginalSort(data *text);
+int ComparatorEnd(const void * ptr1, const void * ptr2);
+void DestructText(data *text);
+void MakeOutput(data *text, int counter_of_strings, FILE *f_out);
 
 
 enum PROGRAM_RES
