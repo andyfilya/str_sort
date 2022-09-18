@@ -151,13 +151,50 @@ void OriginalSort(data *text)
     }
     text->input_string[i] = '\n';
 }
+
+void Swap(struct line *FirstLine, struct line *SecondLine)
+{
+    struct line tmp = *FirstLine;
+    *FirstLine = *SecondLine;
+    *SecondLine = tmp;
+
+}
+void Myqsort(struct line *base, int counter_of_strings,  int(*compare) (const void *, const void *))
+{
+    assert (base != nullptr);
+    assert(compare != nullptr);
+
+    int FirstElem = 0, LastElem = counter_of_strings - 1;
+
+    struct line centroid = base[counter_of_strings / 2]; //central elem
+
+    do
+    {
+        while(compare(&base[FirstElem], &centroid) < 0) FirstElem++;
+        while(compare(&base[LastElem],  &centroid) > 0) LastElem--;
+
+        if(FirstElem <= LastElem)
+        {
+            Swap(&base[FirstElem], &base[LastElem]);
+
+            FirstElem++;
+            LastElem--;
+        }
+    } while (FirstElem <= LastElem);
+
+    if(LastElem > 0)
+    {
+        Myqsort(base, LastElem, compare);
+    }
+    if(FirstElem < counter_of_strings) Myqsort(&base[FirstElem], counter_of_strings - FirstElem, compare);
+}
 void MakeOutput(data *text, int counter_of_strings, FILE *f_out)
 {
     ConstructText(text);
-    qsort(text->mini_string, counter_of_strings, sizeof(struct line), ComparatorStart);
+    Myqsort(text->mini_string, counter_of_strings, ComparatorStart);
     Print(text, counter_of_strings, f_out);
 
-    qsort(text->mini_string, counter_of_strings,sizeof(struct line), ComparatorEnd);
+    Myqsort(text->mini_string, counter_of_strings, ComparatorEnd);
     Print(text, counter_of_strings,f_out);
     
     OriginalSort(text);
