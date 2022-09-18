@@ -30,10 +30,11 @@ void OriginalSort(data *text);
 int ComparatorEnd(const void * ptr1, const void * ptr2);
 void DestructText(data *text);
 void MakeOutput(data *text, int counter_of_strings, FILE *f_out);
-
+void Myqsort(void *base, size_t counter_of_strings,  int(*compare) (const void *, const void *));
+void Swap(struct line* FirstElem, struct line* LastElem);
 
 enum PROGRAM_RES
 {
     PROGRAM_SUCESS = 0,
-    PROGRAM_ERROR = 1,
+    PROGRAM_ERROR = 1
 };
